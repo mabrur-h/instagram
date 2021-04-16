@@ -1,0 +1,33 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "description": "\"# instagram\"",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mabrur-h/instagram.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mabrur-h/instagram/issues"
+  },
+  "homepage": "https://github.com/mabrur-h/instagram#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "cookieparser": "^0.1.0",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.3",
+    "uuid": "^8.3.2"
+  }
+}

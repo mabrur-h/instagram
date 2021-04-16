@@ -1,0 +1,33 @@
+body {
+  background-color: #fafafa;
+}
+
+.registration-logo {
+  width: 80%;
+  height: 80%;
+}
+.registration-slogan {
+  font-size: 17px;
+}
+
+.navbar-search {
+  height: 30px;
+  border-radius: 2px;
+}
+.navbar-search::-webkit-input-placeholder {
+  font-size: 12px;
+  position: absolute;
+  left: 40%;
+}
+.navbar-logo {
+  width: 100px;
+}
+.navbar-list {
+  margin: 0 8px;
+}
+.navbar-list-img {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

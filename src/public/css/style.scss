@@ -1,0 +1,38 @@
+$background-color: #fafafa;
+
+
+body {
+  background-color: $background-color;
+}
+
+.registration {
+  &-logo {
+    width: 80%;
+    height: 80%;
+  }
+  &-slogan {
+    font-size: 17px;
+  }
+}
+
+.navbar {
+  &-search {
+    height: 30px;
+    border-radius: 2px;
+  }
+  &-search::-webkit-input-placeholder {
+    font-size: 12px;
+    position: absolute;
+    left: 40%;
+  }
+  &-logo {
+    width: 100px;
+  }
+  &-list {
+    margin: 0 8px;
+    &-img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
