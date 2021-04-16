@@ -40,3 +40,6 @@ Fs.readdir(RoutesPath, (err, files) => {
         if ( Route.path && Route.router ) application.use(  Route.path, Route.router );
     })
 })
+
+
+application.get('/', (req, res) => res.redirect('/profile'))

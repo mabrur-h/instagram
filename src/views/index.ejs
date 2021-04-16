@@ -1,18 +1,20 @@
 <%- include('parts/header') %>
 <%- include('parts/navbar') %>
 
+<% var photo = photo ? `/img/avatar/${user._id}.jpg` : '/img/avatar/notfound.jpg', username, name %>
+
 <section class="my-2 profile">
     <div class="container">
         <div class="row w-75 mx-auto align-items-center">
             <div class="col-3">
-                <label class="profile-label">
+                <label class="profile-label" style="cursor: pointer">
                     <input id="profile_photo" type="file" accept="image/*" class="visually-hidden">
-                    <img src="/img/profile-img.jpg" class="rounded-circle" width="150" height="150" alt="Avatar">
+                    <img src="<%= photo %>" class="rounded-circle" width="150" height="150" alt="Avatar">
                 </label>
             </div>
             <div class="col-6 p-lg-4">
                 <header class="d-flex align-items-center">
-                    <p class="fs-4 fw-light m-0">mabrur.h11</p>
+                    <p class="fs-4 fw-light m-0"><%= user.username %></p>
                     <div>
                         <a class="btn ms-4 p-0 py-1 border profile-edit profile-outline-none" href="./edit">Edit profile</a>
                         <button class="btn ms-2 profile-outline-none">
@@ -26,7 +28,7 @@
                     <a class="btn profile-outline-none" href="./following"><strong>274</strong> following</a>
                 </div>
                 <div class="mt-2">
-                    <p class="profile-name mb-1">Мабрур Хайитбаев</p>
+                    <p class="profile-name mb-1"><%= user.name %></p>
                     <p class="m-0">🕸 Web developer</p>
                     <a class="m-0 text-decoration-none profile-name" href="/">www.fcb.uz</a>
                 </div>
@@ -118,4 +120,5 @@
     </div>
 </section>
 
+<script src="/js/profile.js"></script>
 <%- include('parts/footer') %>
