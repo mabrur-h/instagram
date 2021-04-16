@@ -1,11 +1,20 @@
 const { Router } = require('express')
 const { createUser, updateDate } = require('../models/UserModel')
 const { generateCrypt } = require('../modules/bcrypt')
-const { genereteJWTToken } = require('../modules/jwt')
+const { generateJWTToken } = require('../modules/jwt')
 const AuthMiddleware = require('../middlewares/AuthMiddleware')
 const Joi = require('joi')
 
 const router = Router()
+
+router.use(AuthMiddleware)
+
+router.use(async (req, res, next) => {
+    if ( req.user ) {
+        res.redirect('/')
+    }
+    next()
+})
 
 const RegistrationValidation = new Joi.object({
     phone: Joi.number()
@@ -60,7 +69,7 @@ router.post('/', async (request, response) => {
     try {
         const { phone, name, username, password } = await RegistrationValidation.validateAsync(request.body)
         const user = await createUser(phone, name, username, generateCrypt(password))
-        let token = genereteJWTToken({
+        let token = generateJWTToken({
             _id: user._id,
             name: user.name,
             username: user.username,

@@ -3,8 +3,8 @@ body {
 }
 
 .registration-logo {
-  width: 80%;
-  height: 80%;
+  width: 70%;
+  height: 70%;
 }
 .registration-slogan {
   font-size: 17px;
@@ -28,6 +28,15 @@ body {
 .navbar-list-img {
   width: 20px;
   height: 20px;
+}
+
+.login-background {
+  background-image: url("../img/login-background.png");
+  height: 660px;
+  background-position: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 }
 
 /*# sourceMappingURL=style.css.map */

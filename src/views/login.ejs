@@ -1,7 +1,7 @@
 <%- include('parts/header') %>
 <% var error %>
 
-<section class="vh-100 d-flex flex-column justify-content-center align-items-center registration">
+<section class="vh-100 d-flex flex-column justify-content-center align-items-center login">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 col-12 d-lg-block d-none login-background">
@@ -9,23 +9,21 @@
             <div class="col-lg-4 col-12">
                 <div class="card text-center p-4">
                     <img src="img/instagram-logo.png" alt="Instagram" class="registration-logo mx-auto">
-                    <strong class="text-muted registration-slogan">
-                        Sign up to see photos and videos from your friends.
-                    </strong>
-                    <form action="/signup" method="post" class="mt-4">
-                        <% if ( error ) { %>
+                    <form class="mt-4" method="POST">
+                        <% if(error) {%>
                             <div class="alert alert-danger">
-                                <small><%= error %></small>
+                                <%= error %>
                             </div>
                         <% } %>
-                        <input type="tel" class="form-control my-2 bg-light" name="phone" placeholder="Mobile number">
-                        <input type="text" class="form-control my-2 bg-light" name="name" placeholder="Full name">
-                        <input type="text" class="form-control my-2 bg-light" name="username" placeholder="Username">
-                        <input type="password" class="form-control my-2 bg-light" name="password" placeholder="Password">
-                        <button type="submit" class="btn btn-primary w-100">Sign up</button>
-                    </form  >
-                    <p class="mt-4 text-muted">By signing up, you agree to our <a target="_blank"
-                                                                                  href="https://help.instagram.com/581066165581870" class="text-decoration-none" tabindex="0">Terms</a>, <a
+                        <input type="text" name="login" class="form-control my-3 bg-light" placeholder="Username or Phone number">
+                        <input type="password" name="password" class="form-control my-3 bg-light"
+                               placeholder="Password">
+                        <button type="submit" class="btn btn-primary w-100">
+                            Login
+                        </button>
+                    </form>
+                    <p class="mt-4 text-muted">By log in, you agree to our <a target="_blank"
+                                                                              href="https://help.instagram.com/581066165581870" class="text-decoration-none" tabindex="0">Terms</a> , <a
                                 target="_blank" href="https://help.instagram.com/519522125107875" class="text-decoration-none" tabindex="0">Data
                             Policy</a> and <a target="_blank" href="/legal/cookies/" class="text-decoration-none" tabindex="0">Cookies Policy</a> .
                     </p>
@@ -33,7 +31,7 @@
                 <div class="row justify-content-center mt-4">
                     <div class="col-12">
                         <div class="card d-flex text-center p-4 align-items-center">
-                            <p class="m-0 p-0">Have an account? <a href="/login" class="text-decoration-none">Log in</a></p>
+                            <p class="m-0 p-0">Don't have an account? <a href="/signup" class="text-decoration-none">Sign up</a></p>
                         </div>
                     </div>
                 </div>

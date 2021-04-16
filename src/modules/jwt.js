@@ -3,7 +3,7 @@ const { verify, sign } = require('jsonwebtoken')
 const Path = require('path')
 require('dotenv').config({ path: Path.join(__dirname, ".env")})
 
-function genereteJWTToken(data){
+function generateJWTToken(data){
     return sign(data, process.env.SECRET_WORD)
 }
 
@@ -18,5 +18,5 @@ function checkJWTToken(token) {
 }
 
 module.exports = {
-    genereteJWTToken, checkJWTToken
+    generateJWTToken, checkJWTToken
 }
