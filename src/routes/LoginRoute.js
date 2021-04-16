@@ -20,6 +20,13 @@ const router = Router()
 
 router.use(AuthMiddleware)
 
+router.use(async (req, res, next) => {
+    if ( req.user ) {
+        res.redirect('/')
+    }
+    next()
+})
+
 router.get('/', (request, response) => {
     response.render('login', {
         title: "Login"
