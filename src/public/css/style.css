@@ -26,8 +26,8 @@ body {
   margin: 0 8px;
 }
 .navbar-list-img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
 }
 
 .login-background {
@@ -37,6 +37,41 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   position: relative;
+}
+
+.profile-edit {
+  min-width: 200px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.profile-outline-none:focus {
+  outline: none;
+  box-shadow: none;
+}
+.profile-name {
+  font-weight: 500;
+}
+.profile-tab .nav {
+  border-top: 1px solid #dee2e6 !important;
+}
+.profile-tab .nav-tabs .nav-item.show .nav-link, .profile-tab .nav-tabs .nav-link.active {
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #181818;
+  color: #181818;
+}
+.profile-tab .nav-tabs .nav-link {
+  border: none;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #8e8e8e;
+  margin: -1px;
+  height: 50px;
+  min-width: 100px;
+  padding: 0 !important;
+  display: inline-block !important;
 }
 
 /*# sourceMappingURL=style.css.map */

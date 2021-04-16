@@ -1,41 +1,43 @@
 <%- include('header') %>
 
-<nav class="navbar navbar-light bg-white border-bottom">
-   <div class="container d-flex justify-content-between align-items-center">
-       <a href="/">
-           <img src="img/instagram-logo.png" alt="instagram" class="navbar-logo">
-       </a>
-       <form class="d-flex">
-           <input class="form-control bg-light navbar-search" type="search" placeholder="Search" aria-label="Search">
-       </form>
-       <ul class="list-unstyled d-flex justify-content-between mb-0">
-           <li class="navbar-list">
-               <a href="/">
-                   <img src="/img/home.svg" alt="home" class="navbar-list-img">
-               </a>
-           </li>
-           <li class="navbar-list">
-               <a href="/">
-                   <img src="/img/messenger.svg" alt="messenger" class="navbar-list-img">
-               </a>
-           </li>
-           <li class="navbar-list">
-               <a href="/">
-                   <img src="/img/explore.svg" alt="messenger" class="navbar-list-img">
-               </a>
-           </li>
-           <li class="navbar-list">
-               <a href="/">
-                   <img src="/img/like.svg" alt="messenger" class="navbar-list-img">
-               </a>
-           </li>
-           <li class="navbar-list">
-               <button class="rounded-circle">
-                   <img src="/img/profile-img.jpg" alt="messenger" class="navbar-list-img rounded-circle">
-               </button>
-           </li>
-       </ul>
-   </div>
+<nav class="navbar-light bg-white border-bottom">
+    <div class="w-75 mx-auto">
+        <div class="navbar">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a href="/">
+                    <img src="img/instagram-logo.png" alt="instagram" class="navbar-logo">
+                </a>
+                <form class="d-none d-md-flex">
+                    <input class="form-control bg-light navbar-search" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <ul class="list-unstyled d-flex justify-content-between mb-0">
+                    <li class="navbar-list">
+                        <a href="/" class="d-block">
+                            <img src="/img/home.svg" alt="home" class="navbar-list-img">
+                        </a>
+                    </li>
+                    <li class="navbar-list">
+                        <a href="/" class="d-block">
+                            <img src="/img/messenger.svg" alt="messenger" class="navbar-list-img">
+                        </a>
+                    </li>
+                    <li class="navbar-list">
+                        <a href="/" class="d-block">
+                            <img src="/img/explore.svg" alt="messenger" class="navbar-list-img">
+                        </a>
+                    </li>
+                    <li class="navbar-list">
+                        <a href="/" class="d-block">
+                            <img src="/img/like.svg" alt="messenger" class="navbar-list-img">
+                        </a>
+                    </li>
+                    <li class="navbar-list">
+                        <img src="/img/profile-img.jpg" alt="avatar" class="navbar-list-img rounded-circle">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </nav>
 
 <%- include('footer') %>
