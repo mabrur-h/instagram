@@ -22,7 +22,6 @@ router.get('/', UserMiddleware, async (request, response) => {
         photo: isExist,
         user: user
     })
-    console.log (user)
 })
 
 

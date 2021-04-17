@@ -1,11 +1,14 @@
 <%- include('parts/header') %>
 <%- include('parts/navbar') %>
 
-<% var photo = photo ? `/img/avatar/${user._id}.jpg` : '/img/avatar/notfound.jpg', username, name %>
+<% var photo = photo ? `/img/avatar/${user._id}.jpg` : '/img/avatar/notfound.jpg', username, name, error %>
 
 <section class="my-2 profile">
     <div class="container">
         <div class="row w-75 mx-auto align-items-center">
+            <% if ( error ) { %>
+                <div class="alert alert-danger"><%= error %></div>
+            <% } %>
             <div class="col-3">
                 <label class="profile-label" style="cursor: pointer">
                     <input id="profile_photo" type="file" accept="image/*" class="visually-hidden">
@@ -16,7 +19,7 @@
                 <header class="d-flex align-items-center">
                     <p class="fs-4 fw-light m-0"><%= user.username %></p>
                     <div>
-                        <a class="btn ms-4 p-0 py-1 border profile-edit profile-outline-none" href="./edit">Edit profile</a>
+                        <a class="btn ms-4 p-0 py-1 border profile-edit profile-outline-none" href="accounts/edit">Edit profile</a>
                         <button class="btn ms-2 profile-outline-none">
                             <img src="/img/setting.svg" alt="Settings icon" width="30" height="30">
                         </button>
@@ -120,5 +123,5 @@
     </div>
 </section>
 
-<script src="/js/profile.js"></script>
+<script src="../js/profile.js"></script>
 <%- include('parts/footer') %>

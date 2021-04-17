@@ -52,7 +52,7 @@ async function createUser(phone, name, username, password) {
 
 async function updateDate(objectId, bdate){
     const db = await UserModel()
-    return await db.updateOne({ _id: objectId }, { bdate })
+    return await db.updateMany({ _id: objectId }, { bdate })
 }
 
 async function findUser(login) {
@@ -61,8 +61,15 @@ async function findUser(login) {
     return await db.findOne(object)
 }
 
+async function updateProfile(objectId, name, website, about){
+    const db = await UserModel()
+    return await db.updateOne({ _id: objectId }, { name, user_info: {website, about} })
+}
+
+
 module.exports = {
     createUser,
     updateDate,
-    findUser
+    findUser,
+    updateProfile
 }

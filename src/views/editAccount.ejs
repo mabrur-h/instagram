@@ -1,0 +1,82 @@
+<%- include('parts/header') %>
+<%- include('parts/navbar') %>
+
+<% var error, photo = photo ? `/img/avatar/${user._id}.jpg` : '/img/avatar/notfound.jpg', user, username, name %>
+
+<section class="edit-account">
+    <div class="container">
+        <div class="w-75 mx-auto">
+            <div class="row">
+                <div class="card mt-4 pt-4 rounded-0 p-4 col-12 col-md-8 mx-auto">
+                    <div class="edit-account-form">
+                        <div class="row">
+                            <div class="col-3 d-flex justify-content-end">
+                                <label class="profile-label" style="cursor: pointer">
+                                    <input id="profile_photo" type="file" accept="image/*" class="visually-hidden">
+                                    <img src="<%= photo %>" class="rounded-circle" width="60" height="60" alt="Avatar">
+                                </label>
+                            </div>
+                            <div class="col-9">
+                                <div class="d-flex flex-column">
+                                    <p class="fs-4 fw-normal m-0"><%= user.username %></p>
+                                    <label for="profile_photo">
+                                        <small class="text-primary">Change profile photo</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="my-4" method="post">
+                            <div class="row">
+                                <div class="row d-flex align-items-start my-2">
+                                    <div class="col-3 d-flex justify-content-end align-items-center">
+                                        <p style="font-weight: 500" class="m-0">Name</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex flex-column">
+                                            <input type="text" class="form-control profile-outline-none" value="<%= user.name %>" name="name">
+                                        </div>
+                                        <small class="text-muted edit-account-secondary-text mt-2">
+                                            To make it easier for people to find your account, use the name by which they know you: your first and last name, nickname or company name.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="row d-flex align-items-start my-2">
+                                    <div class="col-3 d-flex justify-content-end align-items-center">
+                                        <p style="font-weight: 500" class="m-0">Website</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex flex-column">
+                                            <input type="text" class="form-control profile-outline-none" value="http://www.fcb.uz/" name="website">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex align-items-start my-2">
+                                    <div class="col-3 d-flex justify-content-end align-items-center">
+                                        <p style="font-weight: 500" class="m-0">About</p>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex flex-column">
+                                            <textarea type="text" class="form-control profile-outline-none" maxlength="128" name="about">💻 Web developer</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row d-flex align-items-start my-2">
+                                    <div class="col-3 d-flex justify-content-end align-items-center">
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="d-flex flex-column">
+                                            <button type="submit" class="btn btn-primary">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="../js/profile.js"></script>
+<%- include('parts/footer') %>
